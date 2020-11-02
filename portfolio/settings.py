@@ -1,4 +1,4 @@
-
+import django_heroku
 import os
 import environ
 from pathlib import Path
@@ -121,6 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'sataticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
@@ -132,3 +133,5 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL ='home'
 LOGIN_URL = 'login'
+django_heroku.settings(locals())
+
